@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="$if(lang)$$lang$$else$en$endif$" xml:lang="$if(lang)$$lang$$else$en$endif$"$if(dir)$ dir="$dir$"$endif$ data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+$for(author-meta)$
+  <meta name="author" content="$author-meta$" />
+$endfor$
+$if(date-meta)$
+  <meta name="dcterms.date" content="$date-meta$" />
+$endif$
+$if(keywords)$
+  <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
+$endif$
+$if(description-meta)$
+  <meta name="description" content="$description-meta$" />
+$endif$
+  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("article-theme");
+        var theme = saved || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) {}
+    })();
+  </script>
+$for(css)$
+  <link rel="stylesheet" href="$css$" />
+$endfor$
+$if(math)$
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+$endif$
+$for(header-includes)$
+  $header-includes$
+$endfor$
+</head>
+<body>
+$for(include-before)$
+$include-before$
+$endfor$
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+$if(toc)$
+        <button id="toc-toggle-btn" class="ui-btn" type="button" aria-expanded="true" aria-controls="toc-sidebar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="15" y2="12"></line>
+            <line x1="3" y1="18" x2="18" y2="18"></line>
+          </svg>
+          <span>Contents</span>
+        </button>
+$endif$
+        <span class="topbar-brand">
+$if(topic-id)$
+          <span class="topbar-badge">$topic-id$</span>
+$endif$
+$if(discipline)$
+          <span>$discipline$</span>
+$endif$
+        </span>
+      </div>
+      <button id="theme-toggle-btn" class="ui-btn" type="button" aria-label="Toggle color theme">
+        <svg id="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg id="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <span id="theme-toggle-label">Dark</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="toc-backdrop" id="toc-backdrop" aria-hidden="true"></div>
+
+  <div class="page-shell">
+$if(toc)$
+    <aside id="toc-sidebar" class="toc-sidebar" aria-label="Table of contents">
+      <div class="toc-header">
+        <span class="toc-label">Contents</span>
+        <button id="toc-close-btn" class="ui-btn toc-close-mobile" type="button" aria-label="Close contents">Close</button>
+      </div>
+      <nav id="$idprefix$TOC" role="doc-toc">
+        $table-of-contents$
+      </nav>
+    </aside>
+$endif$
+
+    <main class="article-container">
+$if(title)$
+      <header id="title-block-header">
+$if(topic-id)$
+        <div class="article-meta-row">
+          <span class="meta-pill">$topic-id$</span>
+$if(discipline)$
+          <span class="meta-item">$discipline$</span>
+$endif$
+$if(layer)$
+          <span class="meta-item">&middot; Layer $layer$</span>
+$endif$
+$if(reading-time)$
+          <span class="meta-item">&middot; $reading-time$</span>
+$endif$
+        </div>
+$endif$
+        <h1 class="title">$title$</h1>
+$if(prerequisites)$
+        <div class="article-prereqs"><strong>Prerequisites:</strong> $prerequisites$</div>
+$endif$
+$if(subtitle)$
+        <p class="subtitle">$subtitle$</p>
+$endif$
+      </header>
+$endif$
+
+      <article id="article-body" class="article-body">
+$body$
+      </article>
+    </main>
+  </div>
+
+$for(include-after)$
+$include-after$
+$endfor$
+
+  <script>
+    (function () {
+      // 1. Light / Dark theme toggle
+      var html = document.documentElement;
+      var themeBtn = document.getElementById("theme-toggle-btn");
+      var themeLabel = document.getElementById("theme-toggle-label");
+      var sunIcon = document.getElementById("theme-icon-sun");
+      var moonIcon = document.getElementById("theme-icon-moon");
+
+      function syncThemeUI() {
+        var isDark = html.getAttribute("data-theme") === "dark";
+        if (themeLabel) themeLabel.textContent = isDark ? "Light" : "Dark";
+        if (sunIcon) sunIcon.style.display = isDark ? "inline" : "none";
+        if (moonIcon) moonIcon.style.display = isDark ? "none" : "inline";
+      }
+      syncThemeUI();
+
+      if (themeBtn) {
+        themeBtn.addEventListener("click", function () {
+          var next = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+          html.setAttribute("data-theme", next);
+          try { localStorage.setItem("article-theme", next); } catch (e) {}
+          syncThemeUI();
+        });
+      }
+
+      // 2. Collapsible TOC (desktop collapse + mobile drawer)
+      var tocBtn = document.getElementById("toc-toggle-btn");
+      var tocClose = document.getElementById("toc-close-btn");
+      var tocBackdrop = document.getElementById("toc-backdrop");
+      var isNarrow = function () { return window.matchMedia("(max-width: 1179px)").matches; };
+
+      function setTocExpanded(expanded) {
+        if (tocBtn) tocBtn.setAttribute("aria-expanded", expanded ? "true" : "false");
+      }
+
+      if (tocBtn) {
+        if (isNarrow()) setTocExpanded(false);
+        tocBtn.addEventListener("click", function () {
+          if (isNarrow()) {
+            var open = document.body.classList.toggle("toc-open");
+            setTocExpanded(open);
+          } else {
+            var collapsed = document.body.classList.toggle("toc-collapsed");
+            setTocExpanded(!collapsed);
+          }
+        });
+      }
+
+      function closeMobileToc() {
+        document.body.classList.remove("toc-open");
+        if (isNarrow()) setTocExpanded(false);
+      }
+
+      if (tocClose) tocClose.addEventListener("click", closeMobileToc);
+      if (tocBackdrop) tocBackdrop.addEventListener("click", closeMobileToc);
+
+      // 3. Wrap tables in scrollable container + detect Theorem/Proof paragraphs
+      var bodyEl = document.getElementById("article-body");
+      if (bodyEl) {
+        var tables = bodyEl.querySelectorAll("table");
+        tables.forEach(function (tbl) {
+          if (tbl.parentElement && tbl.parentElement.classList.contains("table-wrap")) return;
+          var wrap = document.createElement("div");
+          wrap.className = "table-wrap";
+          tbl.parentNode.insertBefore(wrap, tbl);
+          wrap.appendChild(tbl);
+        });
+
+        var calloutPattern = /^(Axiom|Definition|Theorem|Proposition|Lemma|Corollary|Remark|Example)\b/;
+        var proofPattern = /^Proof\b/;
+        bodyEl.querySelectorAll(":scope > p").forEach(function (p) {
+          var first = p.firstElementChild;
+          if (!first) return;
+          var txt = (first.textContent || "").trim();
+          if (first.tagName === "STRONG" && calloutPattern.test(txt)) {
+            p.classList.add("callout-block");
+          } else if ((first.tagName === "EM" || first.tagName === "STRONG") && proofPattern.test(txt)) {
+            p.classList.add("proof-block");
+          }
+        });
+      }
+
+      // 4. Active section scroll-spy inside TOC
+      var tocLinks = Array.from(document.querySelectorAll("#TOC a[href^='#']"));
+      if (tocLinks.length && "IntersectionObserver" in window) {
+        var linkById = {};
+        tocLinks.forEach(function (a) {
+          var id = decodeURIComponent(a.getAttribute("href").slice(1));
+          linkById[id] = a;
+          a.addEventListener("click", function () {
+            if (isNarrow()) closeMobileToc();
+          });
+        });
+
+        var headings = Array.from(document.querySelectorAll("#article-body h2[id], #article-body h3[id]"));
+        var activeLink = null;
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var link = linkById[entry.target.id];
+              if (link) {
+                if (activeLink) activeLink.classList.remove("toc-active");
+                link.classList.add("toc-active");
+                activeLink = link;
+              }
+            }
+          });
+        }, { rootMargin: "-70px 0px -72% 0px", threshold: 0 });
+        headings.forEach(function (h) { observer.observe(h); });
+      }
+
+      // 5. Render KaTeX math spans
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof katex === "undefined") return;
+        var mathElements = document.getElementsByClassName("math");
+        for (var i = 0; i < mathElements.length; i++) {
+          var el = mathElements[i];
+          var texText = el.textContent;
+          if (el.tagName === "SPAN" && texText) {
+            katex.render(texText, el, {
+              displayMode: el.classList.contains("display"),
+              throwOnError: false,
+              strict: false,
+              macros: {},
+              fleqn: false
+            });
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

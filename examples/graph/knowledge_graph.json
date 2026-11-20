@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "generated_utc": "2026-11-20T00:00:00Z",
+  "source_dir": "output/set_2_corrected",
+  "topic_count": 2,
+  "source_hashes": {
+    "01_synthetic_sets_and_relations.md": "c512cf4aaeabc866242b2629e2dfda81bc8dbba338018fb5161f774aabdfdfa6",
+    "02_synthetic_metric_spaces.md": "9785ad945631f9ac5977812d7ece3fdc3870116c860dbfd817af2aee1e2336d7"
+  },
+  "topics": [
+    {
+      "id": "T01",
+      "filename": "01_synthetic_sets_and_relations.md",
+      "title": "Synthetic Foundations: Sets and Equivalence Relations",
+      "discipline": "Real Analysis",
+      "summary": "Synthetic toy example covering basic set operations, De Morgan's laws, equivalence relations, and set partitions."
+    },
+    {
+      "id": "T02",
+      "filename": "02_synthetic_metric_spaces.md",
+      "title": "Synthetic Metric Spaces and Contractions",
+      "discipline": "Real Analysis",
+      "summary": "Synthetic toy example covering metric axioms, Cauchy sequences, completeness, and the Banach contraction principle."
+    }
+  ],
+  "concepts": [
+    {
+      "id": "C_set_operations",
+      "name": "Set Operations and De Morgan Laws",
+      "kind": "structure",
+      "canonical_topic_id": "T01",
+      "referenced_in_topics": [
+        "T01",
+        "T02"
+      ],
+      "section_anchor": "## 1. Basic Set Operations",
+      "short_statement": "Fundamental subset, union, intersection, Cartesian product, and complement duality laws on arbitrary collections."
+    },
+    {
+      "id": "C_equivalence_relation",
+      "name": "Equivalence Relation",
+      "kind": "definition",
+      "canonical_topic_id": "T01",
+      "referenced_in_topics": [
+        "T01"
+      ],
+      "section_anchor": "## 2. Equivalence Relations",
+      "short_statement": "A reflexive, symmetric, and transitive binary relation partitioning an underlying set into disjoint classes."
+    },
+    {
+      "id": "C_metric_space",
+      "name": "Metric Space",
+      "kind": "definition",
+      "canonical_topic_id": "T02",
+      "referenced_in_topics": [
+        "T02"
+      ],
+      "section_anchor": "## 1. Metric Axioms",
+      "short_statement": "A nonempty set equipped with a symmetric, positive-definite distance function obeying the triangle inequality."
+    },
+    {
+      "id": "C_banach_contraction",
+      "name": "Banach Contraction Principle",
+      "kind": "theorem",
+      "canonical_topic_id": "T02",
+      "referenced_in_topics": [
+        "T02"
+      ],
+      "section_anchor": "## 2. Cauchy Sequences and Banach Contractions",
+      "short_statement": "Every contraction mapping on a nonempty complete metric space possesses a unique fixed point approached geometrically."
+    }
+  ],
+  "micro_edges": [
+    {
+      "source": "C_set_operations",
+      "target": "C_equivalence_relation",
+      "relation": "requires",
+      "evidence": "Equivalence relations are subsets of the Cartesian product A x A."
+    },
+    {
+      "source": "C_set_operations",
+      "target": "C_metric_space",
+      "relation": "requires",
+      "evidence": "A metric is defined as a map on the Cartesian product X x X."
+    },
+    {
+      "source": "C_metric_space",
+      "target": "C_banach_contraction",
+      "relation": "requires",
+      "evidence": "The Banach contraction theorem relies on completeness and the metric triangle inequality."
+    }
+  ],
+  "macro_edges": [
+    {
+      "source": "T01",
+      "target": "T02",
+      "relation": "requires",
+      "supporting_concept_edges": [
+        [
+          "C_set_operations",
+          "C_metric_space"
+        ]
+      ],
+      "weight": 1
+    }
+  ]
+}

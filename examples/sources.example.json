@@ -1,0 +1,16 @@
+{
+  "source_dirs": [
+    "./raw_notes/mathematics",
+    "./raw_notes/probability",
+    "./raw_notes/statistics",
+    "./raw_notes/machine_learning"
+  ],
+  "preferred_canonical_root": "./raw_notes/mathematics",
+  "included_pdfs": [
+    "./raw_notes/mathematics/personal_monograph_draft.pdf"
+  ],
+  "excluded_substrings": [
+    "/third_party/",
+    "/presentations/"
+  ]
+}

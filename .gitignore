@@ -1,0 +1,25 @@
+# Generated corpus outputs and local caches (never commit private notes or builds)
+output/
+cache/
+extracted/
+raw_notes/
+_audit_work/
+
+# Local user configuration (keep only *.example.* templates tracked)
+config/sources.json
+
+# Python bytecode & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Secrets, OS clutter, and editor files
+.env
+.env.*
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak

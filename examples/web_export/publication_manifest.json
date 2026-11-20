@@ -1,0 +1,76 @@
+{
+  "T01": {
+    "manuscript_id": "T01",
+    "source_filename": "01_synthetic_sets_and_relations.md",
+    "discipline": "Real Analysis",
+    "academy_track": "/academy/mathematics/",
+    "topological_layer": 0,
+    "prerequisite_ids": [],
+    "title": "Synthetic Foundations: Sets and Equivalence Relations",
+    "slug_preview": "synthetic-foundations-sets-and-equivalence-relations",
+    "card_summary": "Synthetic toy example covering basic set operations, De Morgan's laws, equivalence relations, and set partitions.",
+    "full_summary": "Synthetic toy example covering basic set operations, De Morgan's laws, equivalence relations, and set partitions.",
+    "budget_status": "PASS",
+    "parts": [
+      {
+        "part_id": "T01_p1",
+        "part_index": 1,
+        "part_count": 1,
+        "part_title": "Synthetic Foundations: Sets and Equivalence Relations",
+        "slug_preview": "synthetic-foundations-sets-and-equivalence-relations",
+        "card_summary": "Synthetic toy example covering basic set operations, De Morgan's laws, equivalence relations, and set partitions.",
+        "full_summary": "Synthetic toy example covering basic set operations, De Morgan's laws, equivalence relations, and set partitions.",
+        "start_heading": "## 1. Basic Set Operations",
+        "end_heading": "## 2. Equivalence Relations",
+        "section_headings": [
+          "## 1. Basic Set Operations",
+          "## 2. Equivalence Relations"
+        ],
+        "est_pg_jsonb_bytes": 8892,
+        "est_visited_nodes": 158,
+        "site_uuid": null,
+        "published_url": null
+      }
+    ],
+    "planned_demos": [],
+    "planned_media": []
+  },
+  "T02": {
+    "manuscript_id": "T02",
+    "source_filename": "02_synthetic_metric_spaces.md",
+    "discipline": "Real Analysis",
+    "academy_track": "/academy/mathematics/",
+    "topological_layer": 1,
+    "prerequisite_ids": [
+      "T01"
+    ],
+    "title": "Synthetic Metric Spaces and Contractions",
+    "slug_preview": "synthetic-metric-spaces-and-contractions",
+    "card_summary": "Synthetic toy example covering metric axioms, Cauchy sequences, completeness, and the Banach contraction principle.",
+    "full_summary": "Synthetic toy example covering metric axioms, Cauchy sequences, completeness, and the Banach contraction principle.",
+    "budget_status": "PASS",
+    "parts": [
+      {
+        "part_id": "T02_p1",
+        "part_index": 1,
+        "part_count": 1,
+        "part_title": "Synthetic Metric Spaces and Contractions",
+        "slug_preview": "synthetic-metric-spaces-and-contractions",
+        "card_summary": "Synthetic toy example covering metric axioms, Cauchy sequences, completeness, and the Banach contraction principle.",
+        "full_summary": "Synthetic toy example covering metric axioms, Cauchy sequences, completeness, and the Banach contraction principle.",
+        "start_heading": "## 1. Metric Axioms",
+        "end_heading": "## 2. Cauchy Sequences and Banach Contractions",
+        "section_headings": [
+          "## 1. Metric Axioms",
+          "## 2. Cauchy Sequences and Banach Contractions"
+        ],
+        "est_pg_jsonb_bytes": 8614,
+        "est_visited_nodes": 147,
+        "site_uuid": null,
+        "published_url": null
+      }
+    ],
+    "planned_demos": [],
+    "planned_media": []
+  }
+}

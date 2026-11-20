@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "source_audit_report": "synthetic_example_audit",
+  "topic_overlays": {
+    "T01": {
+      "errors_fixed_count": 0,
+      "additions_count": 1,
+      "topic_level_notes": []
+    },
+    "T02": {
+      "errors_fixed_count": 1,
+      "additions_count": 1,
+      "topic_level_notes": []
+    }
+  },
+  "concept_overlays": {
+    "C_set_operations": {
+      "epistemic_state": "solid",
+      "audit_refs": []
+    },
+    "C_equivalence_relation": {
+      "epistemic_state": "injected_prerequisite",
+      "audit_refs": [
+        {
+          "type": "addition",
+          "ref_id": "Addition #1",
+          "topic_id": "T01",
+          "summary": "Added full disjointness proof."
+        }
+      ]
+    },
+    "C_metric_space": {
+      "epistemic_state": "solid",
+      "audit_refs": []
+    },
+    "C_banach_contraction": {
+      "epistemic_state": "corrected",
+      "audit_refs": [
+        {
+          "type": "error",
+          "ref_id": "Error #1",
+          "topic_id": "T02",
+          "summary": "Added explicit nonempty and completeness hypotheses."
+        }
+      ]
+    }
+  },
+  "edge_overlays": {
+    "C_set_operations->C_equivalence_relation": {
+      "is_gap_bridge": false,
+      "audit_ref": ""
+    },
+    "C_set_operations->C_metric_space": {
+      "is_gap_bridge": false,
+      "audit_ref": ""
+    },
+    "C_metric_space->C_banach_contraction": {
+      "is_gap_bridge": true,
+      "audit_ref": "T02 Addition #1"
+    }
+  }
+}

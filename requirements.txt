@@ -1,0 +1,11 @@
+# Core verification, graph analytics, incremental rebuild, AST auditing,
+# navigation generation, and Pandoc/web export scripts use Python 3.10+ stdlib only.
+#
+# Install these optional packages only when running raw-note / PDF ingestion scripts:
+#   scripts/scan_inventory.py
+#   scripts/extract_corpus.py
+#   scripts/state_manager.py
+
+pymupdf>=1.24.0
+pyyaml>=6.0
+nbformat>=5.9.0
